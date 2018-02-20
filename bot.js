@@ -1,15 +1,15 @@
-const  Discord  =  require ( ' diskord.js ' );
-const  client  =  neu  Discord.Client ();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-Kunde . ein ( ' bereit ' , () => {
-    Konsole . log ( " Ich bin bereit! " );
+client.on('ready', () => {
+    console.log('I am ready!');
 });
 
-Kunde . an ( ' Nachricht ' , Nachricht  => {
-    if ( Nachricht . Inhalt  ===  ' Ping ' ) {
-    	Nachricht . Antwort ( " Pong " );
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
   	}
 });
 
-// Das muss so sein
-Kunde . login ( Prozess . env . BOT_TOKEN );
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
